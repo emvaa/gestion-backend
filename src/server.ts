@@ -41,15 +41,6 @@ app.use('/api/reservas', reservasRoutes);
 app.use('/api/limpieza', limpiezaRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log('═══════════════════════════════════════');
-  console.log('  ✅ SERVIDOR FUNCIONANDO');
-  console.log(`  🌐 URL: http://localhost:${PORT}`);
-  console.log('  🗄️  Base de datos conectada');
-  console.log('  🔐 Sistema de autenticación activo');
-  console.log('  📋 Gestión completa de reservas');
-  console.log('  🧹 Sistema de limpieza activo');
-  console.log('  👥 Gestión de usuarios activa');
-  console.log('═══════════════════════════════════════');
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Servidor corriendo en el puerto', process.env.PORT || 3000);
 });
